@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    
+</head>
+<body>
+	<form action="2.html" method="get" id="usrform"">
+        <div><center>Dang ki CV</center></div><br>
+        <div>Ho va ten <input type="text" name="Name" placeholder="Nguyen Van C"></div> <br>
+        <div>Dia chi <input type="text" name="Address" placeholder="TP HCM"></div><br>
+        <div>Dien thoai <input type="tel" name="Phone" placeholder="0900000000"></div><br>
+        <div>Email <input type="email" name="Email" placeholder="ex@gmail.com"></div><br>
+        <div>Nghe nghiep  <input type="text" name="Job" placeholder="Designer"></div><br>
+        <div>Anh dai dien <input type="file" name="Path"></div><br>
+        <div>
+            <div style="float:left">Kinh nghiem  </div>
+            <div style="float: left;">
+                    <div class="exp"></div><br>
+                    <div>  <a id="add_btn">Them</a> </div>
+            </div>
+        </div><br>
+        <button type="submit">Dang ki</button>   
+	</form>
+
+	<script>
+        AddExp();
+        function AddExp(){
+            var str = "";
+            str+=   "<div>"; 
+            str+=       "<div>Vi tri cong viec <input type='text' name='Position'></div><br>";
+            str+=       "<div>";
+            str+=	        "<div style='float: left'>Thoi gian </div>";
+            str+=	        "<div style='float: left;'>";
+            str+=		         "<div>Ngay bat dau<input type='date' name='BeginDate'></div><br>";
+            str+=		         "<div>Ngay ket thuc<input type='date' name='EndDate'></div>";
+            str+=	        "</div>";
+            str+=       "</div><br>";
+            str+=       "<div>";
+            str+=	        "<div style='float: left'>Mo ta cong viec </div>";
+            str+=	        "<div style='float: left;'>";
+            str+=		         "<textarea name = 'Decription' form='usrform'></textarea>";
+            str+=	        "</div>";
+            str+=       "</div><br>";
+            str+=    "</div>";
+            str+=    "<br><br><br>";
+            $(".exp").append(str);
+        }
+
+        $(document).ready(function (){
+            $("#add_btn").click(function(){
+                AddExp();
+            });
+        });
+        
+	</script>
+	
+</body>
+</html>
